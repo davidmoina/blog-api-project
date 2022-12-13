@@ -20,7 +20,8 @@ function createCards(id, title, imageCat){
     sectionElement.innerHTML += `
     <div class="col card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${id}">
         <img src="${imageCat}" class="card-img-top img-fluid"
-            alt="...">
+         style='max-height: 165px;
+            object-fit: cover;'>
         <div class="card-body">
             <p class="card-title fw-bold">${title}</p>
         </div>
