@@ -1,13 +1,5 @@
-let idPost = 1;
-let newTitle = 'hola';
-let newBody;
-
 const changeBtn = document.querySelector('#saveChanges');
-changeBtn.addEventListener('click', changeSuccess)
-
-function changeSuccess(){
-    console.log('hola')
-}
+// changeBtn.addEventListener('click', )
 
 function changePost() {
     let toString = {
@@ -25,22 +17,35 @@ function changePost() {
     })
 }
 
-function deletePost(){
+const deleteBtn = document.querySelector('#clearThisPost');
+deleteBtn.addEventListener('click', deletePost);
+
+function deletePost(event) {
+    let idPost = event.target.getAttribute('deleteid');
     fetch(`http://localhost:3000/posts/${idPost}`, {
-        method: 'DELETE'})
+        method: 'DELETE'
+    })
+    window.location.reload();
+
 }
 
+const createBtn = document.querySelector('#createPostBtn');
+createBtn.addEventListener('click', createPost)
+
 function createPost() {
+    let titleCreate = document.querySelector('#createPostTitle').value;
+    let bodyCreate = document.querySelector('#createPostBody').value;
+
     fetch('http://localhost:3000/posts', {
         method: 'POST',
         body: JSON.stringify({
             userId: 1,
-            title: "Primer post del ano",
-            body: 'minecraft'
-
+            title: titleCreate,
+            body: bodyCreate
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         }
     })
+    window.location.reload();
 }
