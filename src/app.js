@@ -1,15 +1,34 @@
 const sectionElement = document.getElementById('postBox');
 const commentButton = document.getElementById("commentsButton");
 const commentsDiv = document.getElementById("commentsDiv");
+const showButton = document.getElementById("showButton");
 
 fetch('http://localhost:3000/posts')
     .then(response => response.json())
-    .then(data => info(data))
+    .then(data => {
+        let counter = 10
+        let newArr = data.slice(0, counter)
+        
+        info(newArr)
+
+        showButton.addEventListener("click", () => {
+            if(counter == 100) {
+                showButton.innerText = "No more posts";
+            } else {
+                counter += 10
+                newArr = data.slice(counter - 10, counter)
+                info(newArr)
+                
+            }
+        })
+    })
 
 function info(data){
     data.forEach(data => {
+        
         const id = data.id;
         const title = data.title;
+        
         fetch('https://aws.random.cat/meow')
         .then(response => response.json())
         .then(data => createCards(id, title, data.file))
@@ -19,14 +38,16 @@ function info(data){
 function createCards(id, title, imageCat){
     sectionElement.innerHTML += `
     <div class="col card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${id}">
-        <img src="${imageCat}" class="card-img-top img-fluid"
-         style='max-height: 165px;
+        <img loading="lazy" src="${imageCat}" class="card-img-top img-fluid" style='max-height: 165px;
             object-fit: cover;'>
         <div class="card-body">
             <p class="card-title fw-bold">${title}</p>
+            <p>${id}</p>
         </div>
     </div>`;
 }
+
+
 
 const gridPost = document.querySelector('.row');
 gridPost.addEventListener('click', showModal);
