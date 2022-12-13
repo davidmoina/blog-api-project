@@ -1,7 +1,12 @@
-const changeBtn = document.querySelector('#saveChanges');
-// changeBtn.addEventListener('click', )
+const changeBtn = document.querySelector('#changeThisPost');
+changeBtn.addEventListener('click', changePost)
 
-function changePost() {
+function changePost(event) {
+    let idPost = event.target.getAttribute('changeid');
+    let userId = document.querySelector('#userId').value;
+    let newTitle = document.querySelector('#changeModalTitle').value;
+    let newBody = document.querySelector('#changeModalBody').value;
+
     let toString = {
         userId: userId,
         title: newTitle,
@@ -15,6 +20,8 @@ function changePost() {
             'Content-type': 'application/json; charset=UTF-8',
         }
     })
+
+    window.location.reload();
 }
 
 const deleteBtn = document.querySelector('#clearThisPost');

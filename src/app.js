@@ -38,8 +38,14 @@ function showModal(event){
            const modalTitle = document.querySelector('#modalTitle');
            const modalBody = document.querySelector('#modalBody');
 
+           const changeModalTitle = document.querySelector('#changeModalTitle');
+           const changeBodyTitle = document.querySelector('#changeModalBody');
+
            modalTitle.innerText = data.title;
            modalBody.innerText = data.body;
+
+           changeModalTitle.value = data.title;
+           changeBodyTitle.value = data.body;
 
            fetch(`http://localhost:3000/users/${data.userId}`)
            .then(response => response.json())
@@ -50,11 +56,15 @@ function showModal(event){
             const modalName = document.querySelector('#modalName');
             const modalEmail = document.querySelector('#modalEmail');
             const clearBtn = document.querySelector('#clearThisPost');
+            const changeBtn = document.querySelector('#changeThisPost');
+            const userId = document.querySelector('#userId');
 
             modalEmail.innerText = data.email;
             modalName.innerText = data.name;
             modalUsername.innerText = data.username;
             clearBtn.setAttribute("deleteid", withoutID);
+            changeBtn.setAttribute("changeid", withoutID);
+            userId.value = data.id;
            }
     }
 }
