@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="modal fade" id="modalPost" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="modalTitle"></h1>
@@ -106,9 +106,18 @@
                     <p id='modalName'>name123</p>
                     <p id="modalEmail">mail@mail.com</p>
                 </div>
-                <div class="modal-footer dp-flex flex-column">
+                <div class="modal-body dp-flex flex-column">
                     <h4>Comments</h4>
-                    <button type="button" class="btn btn-primary">Show comments</button>
+                    <p>
+                        <button id="commentsButton" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDiv" aria-expanded="false" aria-controls="collapseDiv">
+                        Show comments
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseDiv">
+                        <div class="card card-body">
+                            <div id="commentsDiv"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
