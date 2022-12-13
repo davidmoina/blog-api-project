@@ -22,6 +22,10 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createPost">
             Create Post
         </button>
+        <select name="date" id="date">
+            <option value="old">Oldest</option>
+            <option value="last">Newest</option>
+        </select>
     </div>
     <div class="modal fade" id="createPost" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -152,6 +156,7 @@
     </div>
     <script src="./src/app.js"></script>
     <script src="./src/postConfig.js"></script>
+    <script>window.addEventListener('DOMContentLoaded', initPage)</script>
 </body>
 
 </html>
