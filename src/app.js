@@ -6,15 +6,23 @@ fetch('http://localhost:3000/posts')
 
 function info(data){
     data.forEach(data => {
-        sectionElement.innerHTML += `
-        <div class="col card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${data.id}">
-            <img src="http://c.files.bbci.co.uk/653B/production/_95151952_mediaitem95151800.jpg" class="card-img-top img-fluid"
-                alt="...">
-            <div class="card-body">
-                <p class="card-title fw-bold">${data.title}</p>
-            </div>
-        </div>`;
+        const id = data.id;
+        const title = data.title;
+        fetch('https://aws.random.cat/meow')
+        .then(response => response.json())
+        .then(data => createCards(id, title, data.file))
     });
+}
+
+function createCards(id, title, imageCat){
+    sectionElement.innerHTML += `
+    <div class="col card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${id}">
+        <img src="${imageCat}" class="card-img-top img-fluid"
+            alt="...">
+        <div class="card-body">
+            <p class="card-title fw-bold">${title}</p>
+        </div>
+    </div>`;
 }
 
 const gridPost = document.querySelector('.row');
