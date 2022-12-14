@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', initPage);
+
 const sectionElement = document.getElementById('postBox');
 const commentButton = document.getElementById("commentsButton");
 const commentsDiv = document.getElementById("commentsDiv");
@@ -7,15 +9,18 @@ const selectDate = document.querySelector('#date');
 let imagesArr = [];
 
 function initPage() {
+    let funnyCatLoaders = ['https://4.bp.blogspot.com/-zw3S34spthE/Xl7y9Z6r0VI/AAAAAAAm6SE/AfGKzsplCEc1dorHrO586jvS8jd7hTF0QCLcBGAsYHQ/s1600/AW4165808_06.gif', 'https://orig11.deviantart.net/dcab/f/2011/158/1/6/nyan_cat_by_valcreon-d3iapfh.gif', 'https://media0.giphy.com/media/IbyhhY66Z8ovFt0Cv3/giphy.gif', 'https://media.tenor.com/ioO0m0kOufEAAAAi/capoo-bugcat.gif', 'https://media.tenor.com/fjdydcAjFo8AAAAj/capoo-blue.gif']
+    let randImage = Math.floor(Math.random() * 5);
+
     fetch('http://localhost:3000/posts')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             sectionElement.innerHTML = '';
-            sectionElement.innerHTML += `<img src='https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'>`;
+            sectionElement.innerHTML += `<img src='${funnyCatLoaders[randImage]}'>`;
             setTimeout(() => {
                 sectionElement.innerHTML = '';
-            }, 1999)
+                document.querySelector('#btnShowMore').classList.toggle('visually-hidden');
+            }, 2199)
 
             if (imagesArr.length !== data.length) {
                 for (i = 0; i <= data.length + 1; i++) {
@@ -46,101 +51,104 @@ function initPage() {
                 createMain(newArr)
 
                 showButton.addEventListener("click", () => {
-                    if (counter === data.length) {
+
+                    if (newArr.length == data.length) {
                         showButton.innerText = "No more posts";
                     } else {
                         counter += 10;
                         data.slice(counter - 10, counter).forEach(item => {
                             newArr.push(item);
                         })
-                        createMain(newArr)
-                        console.log(newArr)
+                        createMain(newArr);
                     }
                 })
-            }, 2000)
+            }, 2200)
         })
 }
 
 function createMain(data) {
     sectionElement.innerHTML = '';
 
-    function info(data) {
-        data.forEach(data => {
-            const id = data.id;
-            const title = data.title;
-
-            createCards(id, title);
-        });
-    }
-
-    function createCards(id, title) {
-        sectionElement.innerHTML += `
-    <div class="col card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${id}">
-        <img loading="lazy" src="${imagesArr[id]}" class="card-img-top img-fluid" style='max-height: 165px;
-            object-fit: cover;'>
-        <div class="card-body">
-            <p class="card-title fw-bold">${title}</p>
-            <p>${id}</p>
-        </div>
-    </div>`;
-    }
-
     info(data);
 }
 
-const gridPost = document.querySelector('.row');
+function createCards(id, title) {
+    sectionElement.innerHTML += `
+        <div class="col card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${id}">
+            <img loading="lazy" src="${imagesArr[id]}" class="card-img-top img-fluid" style='height: 165px;
+                object-fit: cover; repeat: no-repeat;'>
+            <div class="card-body">
+                <p class="card-title fw-bold">${title}</p>
+            </div>
+        </div>`;
+}
+
+function info(data) {
+    data.forEach(data => {
+        const id = data.id;
+        const title = data.title;
+
+        createCards(id, title);
+    });
+}
+//-------------------
+
+const gridPost = document.querySelector('#postBox');
 gridPost.addEventListener('click', showModal);
 
+let withoutID;
+
 function showModal(event) {
-    let withoutID;
     if (event.target.parentElement.matches('.card')) {
         let parentDiv = String(event.target.parentNode.id);
         withoutID = parentDiv.replace('ID', '');
     } else if (event.target.parentElement.matches('.card-body')) {
         let parentDiv = String(event.target.parentNode.parentElement.id)
         withoutID = parentDiv.replace('ID', '');
-    }
+    };
 
     fetch(`http://localhost:3000/posts/${withoutID}`)
         .then(response => response.json())
         .then(data => changeModal(data))
-
-    function changeModal(data) {
-        const modalTitle = document.querySelector('#modalTitle');
-        const modalBody = document.querySelector('#modalBody');
-
-        const changeModalTitle = document.querySelector('#changeModalTitle');
-        const changeBodyTitle = document.querySelector('#changeModalBody');
-
-        modalTitle.innerText = data.title;
-        modalBody.innerText = data.body;
-
-        changeModalTitle.value = data.title;
-        changeBodyTitle.value = data.body;
-
-        fetch(`http://localhost:3000/users/${data.userId}`)
-            .then(response => response.json())
-            .then(data => changeModalUser(data))
-
-        function changeModalUser(data) {
-            const modalUsername = document.querySelector('#modalUsername');
-            const modalName = document.querySelector('#modalName');
-            const modalEmail = document.querySelector('#modalEmail');
-            const clearBtn = document.querySelector('#clearThisPost');
-            const changeBtn = document.querySelector('#changeThisPost');
-            const userId = document.querySelector('#userId');
-
-            modalEmail.innerText = data.email;
-            modalName.innerText = data.name;
-            modalUsername.innerText = data.username;
-            clearBtn.setAttribute("deleteid", withoutID);
-            changeBtn.setAttribute("changeid", withoutID);
-            userId.value = data.id;
-        }
-
-        obtainComments(withoutID);
-    }
 }
+
+function changeModal(data) {
+    const modalTitle = document.querySelector('#modalTitle');
+    const modalBody = document.querySelector('#modalBody');
+
+    const changeModalTitle = document.querySelector('#changeModalTitle');
+    const changeBodyTitle = document.querySelector('#changeModalBody');
+
+    modalTitle.innerText = data.title;
+    modalBody.innerText = data.body;
+
+    changeModalTitle.value = data.title;
+    changeBodyTitle.value = data.body;
+
+    fetch(`http://localhost:3000/users/${data.userId}`)
+        .then(response => response.json())
+        .then(data => changeModalUser(data))
+
+    obtainComments(withoutID);
+};
+
+function changeModalUser(data) {
+    const modalUsername = document.querySelector('#modalUsername');
+    const modalName = document.querySelector('#modalName');
+    const modalEmail = document.querySelector('#modalEmail');
+    const clearBtn = document.querySelector('#clearThisPost');
+    const changeBtn = document.querySelector('#changeThisPost');
+    const userId = document.querySelector('#userId');
+
+    modalEmail.innerText = data.email;
+    modalName.innerText = data.name;
+    modalUsername.innerText = data.username;
+    clearBtn.setAttribute("deleteid", withoutID);
+    changeBtn.setAttribute("changeid", withoutID);
+    userId.value = data.id;
+};
+
+//-----------------------------
 
 function obtainComments(id) {
     fetch(` http://localhost:3000/posts/${id}/comments`)
@@ -156,4 +164,5 @@ function obtainComments(id) {
                 `
             })
         });
-}
+};
+

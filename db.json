@@ -2,45 +2,51 @@
   "posts": [
     {
       "userId": "1",
-      "title": "Este es un post creado por Ritchie",
+      "title": "Primer post del ano 2025",
+      "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "title": "qui est esse xD x2",
       "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
       "id": 2
     },
     {
-      "userId": "1",
-      "title": "me gusta el awita rica con azucar",
-      "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
-      "id": 3
+      "userId": 1,
+      "id": 3,
+      "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+      "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
     },
     {
-      "userId": "1",
-      "title": "Beibi no me llames que ya estoy ocupa",
-      "body": "Olvidando tus males",
-      "id": 4
+      "userId": 1,
+      "id": 4,
+      "title": "eum et est occaecati",
+      "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
     },
     {
-      "userId": "1",
-      "title": "Ya tu no sabe mami hola",
-      "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
-      "id": 5
+      "userId": 1,
+      "id": 5,
+      "title": "nesciunt quas odio",
+      "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
     },
     {
-      "userId": "1",
-      "title": "Me gusta el arte",
-      "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae",
-      "id": 6
+      "userId": 1,
+      "id": 6,
+      "title": "dolorem eum magni eos aperiam quia",
+      "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
     },
     {
-      "userId": "1",
-      "title": "Mi mama me mima",
-      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas",
-      "id": 7
+      "userId": 1,
+      "id": 7,
+      "title": "magnam facilis autem",
+      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
     },
     {
-      "userId": "1",
-      "title": "Soy un gato no me mires",
-      "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae",
-      "id": 8
+      "userId": 1,
+      "id": 8,
+      "title": "dolorem dolore est ipsam",
+      "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
     },
     {
       "userId": 1,
@@ -589,22 +595,28 @@
       "body": "quo deleniti praesentium dicta non quod\naut est molestias\nmolestias et officia quis nihil\nitaque dolorem quia"
     },
     {
-      "userId": "1",
-      "title": "Yno es mas ingles que nunca",
-      "body": "Este es un gato ingles",
-      "id": 100
+      "userId": 10,
+      "id": 100,
+      "title": "at nam consequatur ea labore ea harum",
+      "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     },
     {
       "userId": 1,
-      "title": "Este blog esta chido carnal",
-      "body": ">)",
+      "title": "fasfsdaf",
+      "body": "dfsafdfasfd",
       "id": 101
     },
     {
       "userId": 1,
-      "title": "pepee",
-      "body": "pepe",
+      "title": "4535",
+      "body": "dfgdeasfs",
       "id": 102
+    },
+    {
+      "userId": "1",
+      "title": "la mejor opcion",
+      "body": "sdgsdfs",
+      "id": 103
     }
   ],
   "users": [
@@ -840,6 +852,41 @@
     }
   ],
   "comments": [
+    {
+      "postId": 1,
+      "id": 1,
+      "name": "id labore ex et quam laborum",
+      "email": "Eliseo@gardner.biz",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+    },
+    {
+      "postId": 1,
+      "id": 2,
+      "name": "quo vero reiciendis velit similique earum",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+    },
+    {
+      "postId": 1,
+      "id": 3,
+      "name": "odio adipisci rerum aut animi",
+      "email": "Nikita@garfield.biz",
+      "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+    },
+    {
+      "postId": 1,
+      "id": 4,
+      "name": "alias odio sit",
+      "email": "Lew@alysha.tv",
+      "body": "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
+    },
+    {
+      "postId": 1,
+      "id": 5,
+      "name": "vero eaque aliquid doloribus et culpa",
+      "email": "Hayden@althea.biz",
+      "body": "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+    },
     {
       "postId": 2,
       "id": 6,
@@ -4269,6 +4316,41 @@
       "name": "dolor ut ut aut molestiae esse et tempora numquam",
       "email": "Alice_Considine@daren.com",
       "body": "pariatur occaecati ea autem at quis et dolorem similique\npariatur ipsa hic et saepe itaque cumque repellendus vel\net quibusdam qui aut nemo et illo\nqui non quod officiis aspernatur qui optio"
+    },
+    {
+      "postId": 100,
+      "id": 496,
+      "name": "et occaecati asperiores quas voluptas ipsam nostrum",
+      "email": "Zola@lizzie.com",
+      "body": "neque unde voluptatem iure\nodio excepturi ipsam ad id\nipsa sed expedita error quam\nvoluptatem tempora necessitatibus suscipit culpa veniam porro iste vel"
+    },
+    {
+      "postId": 100,
+      "id": 497,
+      "name": "doloribus dolores ut dolores occaecati",
+      "email": "Dolly@mandy.co.uk",
+      "body": "non dolor consequatur\nlaboriosam ut deserunt autem odit\nlibero dolore non nesciunt qui\naut est consequatur quo dolorem"
+    },
+    {
+      "postId": 100,
+      "id": 498,
+      "name": "dolores minus aut libero",
+      "email": "Davion@eldora.net",
+      "body": "aliquam pariatur suscipit fugiat eos sunt\noptio voluptatem eveniet rerum dignissimos\nquia aut beatae\nmodi consequatur qui rerum sint veritatis deserunt est"
+    },
+    {
+      "postId": 100,
+      "id": 499,
+      "name": "excepturi sunt cum a et rerum quo voluptatibus quia",
+      "email": "Wilburn_Labadie@araceli.name",
+      "body": "et necessitatibus tempora ipsum quaerat inventore est quasi quidem\nea repudiandae laborum omnis ab reprehenderit ut\nratione sit numquam culpa a rem\natque aut et"
+    },
+    {
+      "postId": 100,
+      "id": 500,
+      "name": "ex eaque eum natus",
+      "email": "Emma@joanny.ca",
+      "body": "perspiciatis quis doloremque\nveniam nisi eos velit sed\nid totam inventore voluptatem laborum et eveniet\naut aut aut maxime quia temporibus ut omnis"
     }
   ]
 }

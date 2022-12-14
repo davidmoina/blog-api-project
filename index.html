@@ -6,26 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://bootswatch.com/5/lux/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"
-        defer></script>
+        defer>
+    </script>
+    <script defer src="./src/app.js"></script>
+    <script defer src="./src/postConfig.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid container">
             <a class="navbar-brand" href="#">My little Blog</a>
         </div>
     </nav>
-    <div class="container mt-4">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createPost">
-            Create Post
-        </button>
-        <select name="date" id="date">
-            <option value="old">Oldest</option>
-            <option value="last">Newest</option>
-        </select>
+    <div class="container">
+        <div class="mt-4 row justify-content-around">
+            <button type="button" class="btn btn-light col-2" data-bs-toggle="modal" data-bs-target="#createPost">
+                Create Post
+            </button>
+            <select name="date" id="date" class="col-2">
+                <option value="old">Oldest</option>
+                <option value="last">Newest</option>
+            </select>
+        </div>
     </div>
     <div class="modal fade" id="createPost" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -151,12 +156,14 @@
     </section>
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     </div>
-    <div class="container text-center mt-1 mb-3">
+    <div class="container text-center mt-1 mb-3 visually-hidden" id="btnShowMore">
         <button class="btn btn-primary" id="showButton">Show more</button>
     </div>
-    <script src="./src/app.js"></script>
-    <script src="./src/postConfig.js"></script>
-    <script>window.addEventListener('DOMContentLoaded', initPage)</script>
+    <footer class="bg-dark">
+        <div class="container text-center pt-4 pb-4">
+            <p>Blog by David & Valentino from Squad Ritchie</p>
+        </div>
+    </footer>
 </body>
 
 </html>
