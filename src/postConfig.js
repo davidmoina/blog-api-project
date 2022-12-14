@@ -21,8 +21,8 @@ function changePost(event) {
         }
     })
 
-    // initPage();
-    // initPage();
+    initPage();
+    initPage();
 }
 
 const deleteBtn = document.querySelector('#clearThisPost');
@@ -33,8 +33,8 @@ function deletePost(event) {
     fetch(`http://localhost:3000/posts/${idPost}`, {
         method: 'DELETE'
     })
-    // initPage();
-    // initPage();
+    initPage();
+    initPage();
 }
 
 const createBtn = document.querySelector('#createPostBtn');
@@ -55,6 +55,6 @@ function createPost() {
             'Content-type': 'application/json; charset=UTF-8',
         }
     })
-    // initPage();
-    // initPage();
+    initPage();
+    initPage();
 }
