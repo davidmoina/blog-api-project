@@ -16,7 +16,7 @@ function initPage() {
         .then(response => response.json())
         .then(data => {
             sectionElement.innerHTML = '';
-            sectionElement.innerHTML += `<img src='${funnyCatLoaders[randImage]}'>`;
+            sectionElement.innerHTML += `<img width="200px" height="200px" src='${funnyCatLoaders[randImage]}'>`;
             setTimeout(() => {
                 sectionElement.innerHTML = '';
                 document.querySelector('#btnShowMore').classList.toggle('visually-hidden');
@@ -91,7 +91,6 @@ function info(data) {
         createCards(id, title);
     });
 }
-//-------------------
 
 const gridPost = document.querySelector('#postBox');
 gridPost.addEventListener('click', showModal);
@@ -110,7 +109,7 @@ function showModal(event) {
     fetch(`http://localhost:3000/posts/${withoutID}`)
         .then(response => response.json())
         .then(data => changeModal(data))
-}
+};
 
 function changeModal(data) {
     const modalTitle = document.querySelector('#modalTitle');
@@ -139,6 +138,7 @@ function changeModalUser(data) {
     const clearBtn = document.querySelector('#clearThisPost');
     const changeBtn = document.querySelector('#changeThisPost');
     const userId = document.querySelector('#userId');
+    const imgModal = document.getElementById("imgModal");
 
     modalEmail.innerText = data.email;
     modalName.innerText = data.name;
@@ -146,6 +146,10 @@ function changeModalUser(data) {
     clearBtn.setAttribute("deleteid", withoutID);
     changeBtn.setAttribute("changeid", withoutID);
     userId.value = data.id;
+    imgModal.innerHTML = `
+    <img loading="lazy" src="${imagesArr[withoutID]}" class="card-img-top img-fluid rounded align-middle" style='height: 200px;
+    object-fit: cover; repeat: no-repeat;'>
+    `
 };
 
 //-----------------------------
@@ -158,7 +162,7 @@ function obtainComments(id) {
             data.forEach(item => {
                 commentsDiv.innerHTML += `
                     <div class="dp-flex column">
-                        <span class="text-light bg-dark p-1">${item.name} - ${item.email}</span>
+                        <span class="text-dark">${item.name} - ${item.email}</span>
                         <p class="mt-1 mb-1">${item.body}</p>
                     </div>
                 `
