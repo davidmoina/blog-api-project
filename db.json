@@ -2,8 +2,8 @@
   "posts": [
     {
       "userId": "1",
-      "title": "Primer post del ano 2025",
-      "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+      "title": "Primer post del ano 2023",
+      "body": "et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
       "id": 1
     },
     {
@@ -599,12 +599,6 @@
       "id": 100,
       "title": "at nam consequatur ea labore ea harum",
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
-    },
-    {
-      "userId": "1",
-      "title": "la mejor opcion",
-      "body": "sdgsdfs",
-      "id": 103
     }
   ],
   "users": [
