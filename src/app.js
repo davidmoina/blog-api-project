@@ -16,7 +16,7 @@ function initPage() {
         .then(response => response.json())
         .then(data => {
             sectionElement.innerHTML = '';
-            sectionElement.innerHTML += `<img width="200px" height="200px" src='${funnyCatLoaders[randImage]}'>`;
+            sectionElement.innerHTML += `<img class="loader" width="200px" height="200px" src='${funnyCatLoaders[randImage]}'>`;
             setTimeout(() => {
                 sectionElement.innerHTML = '';
                 document.querySelector('#btnShowMore').classList.toggle('visually-hidden');
@@ -74,10 +74,9 @@ function createMain(data) {
 
 function createCards(id, title) {
     sectionElement.innerHTML += `
-        <div class="col card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${id}">
-            <img loading="lazy" src="${imagesArr[id]}" class="card-img-top img-fluid" style='height: 165px;
-                object-fit: cover; repeat: no-repeat;'>
-            <div class="card-body">
+        <div class="card-div col-3 card p-0" data-bs-toggle="modal" data-bs-target="#modalPost" id="ID${id}">
+            <img loading="lazy" src="${imagesArr[id]}" class="card-img-top img-fluid">
+            <div class="card-body text-center">
                 <p class="card-title fw-bold">${title}</p>
             </div>
         </div>`;
@@ -151,8 +150,6 @@ function changeModalUser(data) {
     object-fit: cover; repeat: no-repeat;'>
     `
 };
-
-//-----------------------------
 
 function obtainComments(id) {
     fetch(` http://localhost:3000/posts/${id}/comments`)

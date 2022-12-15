@@ -1,6 +1,22 @@
 html, body {
-    /* background: rgb(2,0,36) !important; */
-    /* background: linear-gradient(141deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 38%, rgba(0,212,255,1) 100%) !important; */
     background: rgb(2,0,36) !important;
-background: linear-gradient(141deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 47%, rgba(0,112,255,1) 88%) !important;
+    background: linear-gradient(141deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 47%, rgba(0,112,255,1) 88%) !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+main .card-div {
+    width: 300px;
+}
+
+main .card-div img {
+    height: 170px; 
+    object-fit: cover; 
+    background-repeat: no-repeat;
+}
+main #postBox .loader {
+    width: 400px;
+}
+
+main .top-buttons-div button, main .top-buttons-div select {
+    min-width: 100px;
 }

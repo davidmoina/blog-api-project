@@ -21,7 +21,6 @@ function changePost(event) {
         }
     })
 
-    // initPage();
     initPage();
 }
 
@@ -33,7 +32,7 @@ function deletePost(event) {
     fetch(`http://localhost:3000/posts/${idPost}`, {
         method: 'DELETE'
     })
-    // initPage();
+
     initPage();
 }
 
@@ -55,6 +54,6 @@ function createPost() {
             'Content-type': 'application/json; charset=UTF-8',
         }
     })
-    // initPage();
+    
     initPage();
 }
