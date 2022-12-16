@@ -109,6 +109,8 @@ function showModal(event) {
     fetch(`http://localhost:3000/posts/${withoutID}`)
         .then(response => response.json())
         .then(data => changeModal(data))
+
+        commentButton.addEventListener('click', obtainComments(withoutID));
 };
 
 function changeModal(data) {
@@ -127,8 +129,6 @@ function changeModal(data) {
     fetch(`http://localhost:3000/users/${data.userId}`)
         .then(response => response.json())
         .then(data => changeModalUser(data))
-
-    obtainComments(withoutID);
 };
 
 function changeModalUser(data) {
