@@ -109,7 +109,7 @@ function showModal(event) {
         .then(response => response.json())
         .then(data => changeModal(data))
 
-        commentButton.addEventListener('click', obtainComments(withoutID));
+    commentButton.addEventListener('click', obtainComments(withoutID));
 };
 
 function changeModal(data) {
@@ -167,7 +167,9 @@ function obtainComments(id) {
         });
 };
 
-closeModal.addEventListener('click', ()=>{
+closeModal.addEventListener('click', () => {
     const collapseModal = document.querySelector('#collapseDiv');
-    collapseModal.classList.toggle('show');
+    if (collapseModal.classList[1] == 'show') {
+        collapseModal.classList.toggle('show');
+    }
 })
