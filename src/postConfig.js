@@ -1,6 +1,8 @@
 const changeBtn = document.querySelector('#changeThisPost');
 changeBtn.addEventListener('click', changePost)
 
+const statusModal = document.querySelector('#statusModalBody');
+
 function changePost(event) {
     let idPost = event.target.getAttribute('changeid');
     let userId = document.querySelector('#userId').value;
@@ -20,6 +22,13 @@ function changePost(event) {
             'Content-type': 'application/json; charset=UTF-8',
         }
     })
+    .then(response => {
+        if(response.status === 200){
+            statusModal.innerText = 'Your post was successfully modified.'
+        }else{
+            statusModal.innerText = 'There was an error.';
+        }
+    })
 
     initPage();
     initPage();
@@ -32,6 +41,13 @@ function deletePost(event) {
     let idPost = event.target.getAttribute('deleteid');
     fetch(`http://localhost:3000/posts/${idPost}`, {
         method: 'DELETE'
+    })
+    .then(response => {
+        if(response.status === 200){
+            statusModal.innerText = 'Your post was successfully deleted.'
+        }else{
+            statusModal.innerText = 'There was an error.';
+        }
     })
 
     initPage();
@@ -56,7 +72,13 @@ function createPost() {
             'Content-type': 'application/json; charset=UTF-8',
         }
     })
-    
+    .then(response => {
+        if(response.status === 201){
+            statusModal.innerText = 'Your post was successfully created.'
+        }else{
+            statusModal.innerText = 'There was an error.';
+        }
+    })
     initPage();
     initPage();
 }

@@ -149,7 +149,8 @@
                     <div class="modal-footer">
                         <button class="btn btn-primary" data-bs-target="#changePost" data-bs-toggle="modal"> No, go
                             back.</button>
-                        <button class="btn btn-primary" data-bs-dismiss="modal" id="clearThisPost"> Yes, delete.</button>
+                        <button class="btn btn-primary" data-bs-target="#modalStatus"
+                        data-bs-toggle="modal" id="clearThisPost"> Yes, delete.</button>
                     </div>
                 </div>
             </div>
@@ -168,7 +169,8 @@
                     <div class="modal-footer">
                         <button class="btn btn-primary" data-bs-target="#modalPost" data-bs-toggle="modal"> No, go
                             back.</button>
-                        <button class="btn btn-primary" data-bs-dismiss="modal" id="changeThisPost"> Yes, please.</button>
+                        <button class="btn btn-primary" data-bs-target="#modalStatus"
+                        data-bs-toggle="modal" id="changeThisPost"> Yes, please.</button>
                     </div>
                 </div>
             </div>
@@ -186,7 +188,22 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-primary" data-bs-target="#createPost" data-bs-toggle="modal"> No, thanks.</button>
-                        <button class="btn btn-primary" data-bs-dismiss="modal" id="createPostBtn"> Let's Go .</button>
+                        <button class="btn btn-primary" data-bs-target="#modalStatus"
+                        data-bs-toggle="modal" id="createPostBtn"> Let's Go .</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalStatus" aria-hidden="true" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Status</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p id="statusModalBody"></p>
                     </div>
                 </div>
             </div>
