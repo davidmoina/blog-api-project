@@ -30,8 +30,9 @@ function changePost(event) {
         }
     })
 
-    initPage();
-    initPage();
+    setTimeout(()=>{
+        initPage();
+    }, 1000);
 }
 
 const deleteBtn = document.querySelector('#clearThisPost');
@@ -50,8 +51,9 @@ function deletePost(event) {
         }
     })
 
-    initPage();
-    initPage();
+    setTimeout(()=>{
+        initPage();
+    }, 1000);
 }
 
 const createBtn = document.querySelector('#createPostBtn');
@@ -79,6 +81,8 @@ function createPost() {
             statusModal.innerText = 'There was an error.';
         }
     })
-    initPage();
-    initPage();
+    
+    setTimeout(()=>{
+        initPage();
+    }, 1000);
 }
