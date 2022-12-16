@@ -5,6 +5,7 @@ const commentButton = document.getElementById("commentsButton");
 const commentsDiv = document.getElementById("commentsDiv");
 const showButton = document.getElementById("showButton");
 const selectDate = document.querySelector('#date');
+const closeModal = document.querySelector('#closeModal');
 
 let imagesArr = [];
 
@@ -167,3 +168,7 @@ function obtainComments(id) {
         });
 };
 
+closeModal.addEventListener('click', ()=>{
+    const collapseModal = document.querySelector('#collapseDiv');
+    collapseModal.classList.toggle('show');
+})
