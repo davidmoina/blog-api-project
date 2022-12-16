@@ -5,6 +5,8 @@ const commentButton = document.getElementById("commentsButton");
 const commentsDiv = document.getElementById("commentsDiv");
 const showButton = document.getElementById("showButton");
 const selectDate = document.querySelector('#date');
+const btnComments = document.getElementById("commentsButton");
+const collapseDiv = document.getElementById("collapseDiv");
 
 let imagesArr = [];
 
@@ -127,7 +129,7 @@ function changeModal(data) {
         .then(response => response.json())
         .then(data => changeModalUser(data))
 
-    obtainComments(withoutID);
+    btnComments.addEventListener("click", obtainComments(withoutID));
 };
 
 function changeModalUser(data) {
@@ -166,4 +168,5 @@ function obtainComments(id) {
             })
         });
 };
+
 
