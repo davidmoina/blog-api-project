@@ -23,7 +23,7 @@ function initPage() {
             }, 2199)
 
             if (imagesArr.length !== data.length) {
-                for (i = 0; i <= data.length + 1; i++) {
+                for (i = 0; i <= data[data.length - 1].id; i++) {
                     fetch('https://aws.random.cat/meow')
                         .then(response => response.json())
                         .then(data => imagesArr.push(data.file))
