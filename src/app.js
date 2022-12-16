@@ -5,7 +5,6 @@ const commentButton = document.getElementById("commentsButton");
 const commentsDiv = document.getElementById("commentsDiv");
 const showButton = document.getElementById("showButton");
 const selectDate = document.querySelector('#date');
-const btnComments = document.getElementById("commentsButton");
 
 let imagesArr = [];
 
