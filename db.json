@@ -611,12 +611,6 @@
       "title": "Soy un nuevo blog",
       "body": "Este es un post",
       "id": 104
-    },
-    {
-      "userId": 1,
-      "title": "Creando un nuevo post",
-      "body": "Nuevo psot",
-      "id": 105
     }
   ],
   "users": [
