@@ -52,8 +52,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="createPostBtn"
-                            data-bs-dismiss="modal">Create</button>
+                        <button type="button" class="btn btn-primary" data-bs-target="#modalCreate"
+                                data-bs-toggle="modal">Create</button>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,8 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-target="#modalPost"
                             data-bs-toggle="modal">Go Back</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="changeThisPost">Save
+                        <button type="button" class="btn btn-primary" data-bs-target="#modalChange"
+                                data-bs-toggle="modal">Save
                             changes</button>
                     </div>
                 </div>
@@ -146,9 +147,46 @@
                         Are you sure you want to delete this post?
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-target="#modalPost" data-bs-toggle="modal"> No, go
+                        <button class="btn btn-primary" data-bs-target="#changePost" data-bs-toggle="modal"> No, go
                             back.</button>
                         <button class="btn btn-primary" data-bs-dismiss="modal" id="clearThisPost"> Yes, delete.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalChange" aria-hidden="true" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Changes Confirmation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to modify this post?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#modalPost" data-bs-toggle="modal"> No, go
+                            back.</button>
+                        <button class="btn btn-primary" data-bs-dismiss="modal" id="changeThisPost"> Yes, please.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalCreate" aria-hidden="true" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Create Confirmation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to create a new post?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#createPost" data-bs-toggle="modal"> No, thanks.</button>
+                        <button class="btn btn-primary" data-bs-dismiss="modal" id="createPostBtn"> Let's Go.</button>
                     </div>
                 </div>
             </div>
