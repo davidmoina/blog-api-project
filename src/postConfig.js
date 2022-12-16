@@ -22,6 +22,7 @@ function changePost(event) {
     })
 
     initPage();
+    initPage();
 }
 
 const deleteBtn = document.querySelector('#clearThisPost');
@@ -33,6 +34,7 @@ function deletePost(event) {
         method: 'DELETE'
     })
 
+    initPage();
     initPage();
 }
 
@@ -55,5 +57,6 @@ function createPost() {
         }
     })
     
+    initPage();
     initPage();
 }

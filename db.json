@@ -2,7 +2,7 @@
   "posts": [
     {
       "userId": "1",
-      "title": "Primer post del año 2023",
+      "title": "Primer post del año 2022",
       "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
       "id": 1
     },
@@ -611,6 +611,12 @@
       "title": "Soy un nuevo blog",
       "body": "Este es un post",
       "id": 104
+    },
+    {
+      "userId": 1,
+      "title": "Creando un nuevo post",
+      "body": "Nuevo psot",
+      "id": 105
     }
   ],
   "users": [
