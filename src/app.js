@@ -129,7 +129,7 @@ function changeModal(data) {
         .then(response => response.json())
         .then(data => changeModalUser(data))
 
-    btnComments.addEventListener("click", obtainComments(withoutID));
+    obtainComments(withoutID);
 };
 
 function changeModalUser(data) {
